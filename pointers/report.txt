@@ -1,0 +1,14 @@
+Assignment 1:
+I declared an integer variable and a pointer to it. I demonstrated accessing and printing the address of the integer both directly via the variable and through the pointer. Then, I modified the integer's value by dereferencing the pointer and confirmed the update by printing the new value.
+
+Assignment 2:
+I declared and initialized an integer array. Using a pointer, I traversed the array by incrementing the pointer via pointer arithmetic (*(ptr + i)), printing each element without using array indexing. I then modified the array elements directly through pointer arithmetic and printed the updated array values both by pointer traversal and traditional array indexing, illustrating the equivalence of these approaches.
+
+Assignment 3:
+I implemented a swap function that takes pointers to two integers and swaps their values by dereferencing the pointers. The main() function calls swap by passing the addresses of two integers, and the values are printed before and after the swap to show the effect of pointer-based manipulation.
+
+Assignment 4:
+I worked with double pointers by declaring a pointer to an integer and then a pointer to that pointer. I accessed the integer value by dereferencing both the single pointer and the double pointer, demonstrating multi-level pointer indirection.
+
+Assignment 5:
+I declared a string as a character array and used a character pointer to traverse and print the string one character at a time until the null terminator was reached. Simultaneously, I counted the number of characters by incrementing a counter during traversal, showcasing string manipulation purely through pointer arithmetic.
