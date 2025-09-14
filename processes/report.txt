@@ -1,0 +1,48 @@
+GitHub Link: 
+
+
+
+Assignment 0
+
+                        parent (Before Line A)
+                        /                        \
+                       /                          \
+                    parent                         child_1      ("After Line A - Before Line B" is printed 2 times, child1 process is created after first fork())
+                      /   \                         /   \
+                     /     \                       /     \ 
+                 parent     child_2             child_1   child_1_1  (After Line B - Before Line C" is printed 4 times) parent and child1 create child processes
+                /  \          /  \               /  \          \           \
+               /    \        /    \             /    \          \           \
+         parent   child4  child2  child_2_1  child1  child_1_2  child_1_1   child_1_1_1  ("After Line C") is printed 8 times
+
+         Each fork() doubles existing processes
+
+Assignment 1
+This program demonstrates how to create a child process using fork() and replace its execution with a new program using execl(). 
+The program starts by calling fork() to create a child process. If the process is the child, it uses execl() to execute the ls command, 
+which lists the contents of the current directory. The execl() call replaces the child process's image with that of the ls program, so the directory 
+listing is printed as output from the child. Meanwhile, the parent process waits briefly using sleep(1) to allow the child process to start and print its output, 
+then prints the message "Parent process done"
+
+Assignment 2
+This program demonstrates creating multiple child processes using fork() and running different commands with execl(). 
+The first child executes the ls command to list directory contents, while the second child runs the date command to show the current time. 
+The parent process prints "Parent process done" after creating both children. 
+To ensure the outputs appear in order, the parent uses sleep() to pause briefly between creating the two children. 
+The program effectively shows how to spawn child processes and replace their execution with different commands. 
+Using fork() and execl() allows the children to run independently, while the parent continues its work.
+
+Assignment 3
+This program creates a child process using fork(). Inside the child process, execl() is used to run the echo command with the argument "Hello from child process". 
+This replaces the child’s process image with the echo program, which prints the message to the standard output. 
+The parent process waits for the child to complete using waitpid() to ensure the child’s message is printed first. 
+After the child finishes, the parent prints "Parent process done". This approach demonstrates how to pass arguments to a program run by execl() 
+and how the parent can synchronize its output with the child.
+
+Assignment 4
+This program demonstrates the use of fork() and execl() to run a command with multiple arguments. It first creates a child process using fork(). 
+The child process executes the grep command via execl(), searching for the word "main" inside the file "text.txt". 
+This causes the child process to output all lines from the file containing the word "main". Meanwhile, 
+the parent process waits for the child process to complete using waitpid() to ensure the grep output is printed first. After the child finishes, 
+the parent prints the message "Parent process done". This approach effectively illustrates running an external command with arguments in a child 
+process and synchronizing with the parent process for orderly output.
